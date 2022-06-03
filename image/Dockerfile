@@ -9,9 +9,8 @@ RUN apt-get update  && \
     unzip
 
 WORKDIR /opt/mitoinstall
-RUN  pwd && git clone https://github.com/HSGU-NIA/mitoAnalyzer \
+RUN git clone https://github.com/HSGU-NIA/mitoAnalyzer \
              && cd mitoAnalyzer \
-             && pwd \
              && unzip fastMitoCalc.zip \
              && rm BaseCoverage \
              && g++ BaseCoverage.cpp -o BaseCoverage \
