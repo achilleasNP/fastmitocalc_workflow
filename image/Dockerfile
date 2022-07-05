@@ -1,5 +1,5 @@
 FROM staphb/samtools:1.15
-LABEL description="Mitoanalyzer image"
+LABEL description="Mitoanalyzer image with fastMitoCalc"
 LABEL image="mitoanalyzer"
 LABEL version="0.0.3a"
 
