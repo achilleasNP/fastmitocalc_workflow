@@ -10,7 +10,6 @@ workflow run_fastmitocalc {
 task fastmitocalc {
   File inputBam
   File inputBamIndex
-  File cramIndexLink = sub(inputBam,"cram$", "crai")
   String?  mitoString
   String?  autosomePrefix
   String?  build
@@ -18,7 +17,6 @@ task fastmitocalc {
 
   command  {
     mkdir res && \
-    ln -s ${inputBamIndex} ${cramIndexLink} && \
     fastMitoCalc -e ${default="chr" autosomePrefix} \
                  -m ${default="MT" mitoString} \
                  -g ${default="38" build} \
@@ -34,7 +32,7 @@ task fastmitocalc {
   }
 
   runtime {
-   docker: "achilleasnp/mitoanalyzer:v0.0.1a"
+   docker: "achilleasnp/mitoanalyzer:v0.0.2a"
   }
 
 }

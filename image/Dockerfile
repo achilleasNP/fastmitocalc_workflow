@@ -8,12 +8,13 @@ RUN apt-get update  && \
     git \
     unzip
 
+
+COPY mitoAnalyzer /opt/mitoinstall/mitoAnalyzer
 WORKDIR /opt/mitoinstall
-RUN git clone https://github.com/HSGU-NIA/mitoAnalyzer \
-             && cd mitoAnalyzer \
-             && unzip fastMitoCalc.zip \
-             && rm BaseCoverage \
-             && g++ BaseCoverage.cpp -o BaseCoverage \
-             && ln -s /opt/mitoinstall/mitoAnalyzer/BaseCoverage /usr/local/bin/BaseCoverage \
-             && ln -s /opt/mitoinstall/mitoAnalyzer/fastMitoCalc.pl /usr/local/bin/fastMitoCalc
+
+RUN       cd mitoAnalyzer \
+          && rm BaseCoverage \
+          && g++ BaseCoverage.cpp -o BaseCoverage \
+          && ln -s /opt/mitoinstall/mitoAnalyzer/BaseCoverage /usr/local/bin/BaseCoverage \
+          && ln -s /opt/mitoinstall/mitoAnalyzer/fastMitoCalc.pl /usr/local/bin/fastMitoCalc
 
