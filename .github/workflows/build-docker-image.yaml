@@ -31,4 +31,5 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: ./image/
-          tags: ${{ steps.meta.outputs.labels.version }}
+          push: true
+          tags: ${{ steps.meta.outputs.tags.version }}
