@@ -32,7 +32,7 @@ task fastmitocalc {
   }
 
   runtime {
-   docker: "achilleasnp/mitoanalyzer:v0.0.4a"
+   docker: "achilleasnp/mitoanalyzer:v0.0.5a"
   }
 
 }
