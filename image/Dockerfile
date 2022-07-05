@@ -1,5 +1,6 @@
 FROM staphb/samtools:1.15
 LABEL description="Mitoanalyzer image"
+LABEL image="mitoanalyzer"
 LABEL version="0.0.3a"
 
 RUN apt-get update  && \
