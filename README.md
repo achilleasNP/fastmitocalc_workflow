@@ -1,4 +1,5 @@
 # A WDL workflow for fastmitocalc
+![Docker container build](https://github.com/achilleasNP/fastmitocalc_workflow/actions/workflows/build-docker-image.yaml/badge.svg)
 
 The repository contains the workflow and a Dockerfile for the running container.
 The fastMitoCalc code is from https://github.com/HSGU-NIA/mitoAnalyzer 
