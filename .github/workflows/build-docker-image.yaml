@@ -1,9 +1,12 @@
 name: build-docker-image
 on:
   push:
+    branches:
+      - 'master'
     paths:
-      - 'image/**'
-
+      - 'image/Dockerfile'
+    tags:
+      - 'v*'
 jobs:
   build-and-push-docker-image:
     name: Build and push docker image to docker hub
@@ -21,10 +24,11 @@ jobs:
       - name: Extract metadata (tags,labels) for Docker
         uses: docker/metadata-action@v4
         id: meta
+        with:
+          images: name=achilleasnp/mitoanalyzer
 
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
           context: ./image/
-          images: name=${{ secrets.DOCKERHUB_USERNAME }}/mitoanalyzer
-          tags: v${{ steps.meta.outputs.labels.version }}
+          tags: ${{ steps.meta.outputs.labels.version }}
