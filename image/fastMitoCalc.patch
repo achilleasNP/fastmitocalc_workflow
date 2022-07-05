@@ -1,0 +1,5 @@
+62,63c62
+< my $bai2 = $bamfile;
+< substr($bai2,-1,1) = "i";
+---
+> my $bai2 = "$bamfile.crai";
