@@ -32,4 +32,4 @@ jobs:
         with:
           context: ./image/
           push: true
-          tags: ${{ steps.meta.outputs.tags.version }}
+          tags: ${{ steps.meta.outputs.tags }}
